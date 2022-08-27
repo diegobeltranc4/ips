@@ -1,0 +1,487 @@
+/* FONTS GOOGLE */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root{
+    --azul: #2980b9;
+    --azul-claro: #ecf4f9;
+    --borde: 1px solid rgba(0,0,0,.1);
+    --blanco: #E0E0E0;
+    --azul-opacidad: #601190;
+    --bg-menu: #080708;
+    --bg-body: #C7E1FF;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+.contenedor-web {
+    display: flex;
+}
+.contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    padding-bottom: 7rem;
+    background: #f0f3f5;
+    min-height: 100vh;
+}
+
+.contenedor form {
+    width: 60rem;
+    box-shadow: 0 10px 15px rgba(0,0,0,.1);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.contenedor form .links {
+    background: #fff;
+    padding: 3rem 1.5rem;
+}
+
+.contenedor form .titulo {
+    font-size: 2.7rem;
+    padding-bottom: 1.5rem;
+    color: #666;
+    text-transform: none;
+}
+/*TITULO FORMULARIO DE REGISTRO*/
+.contenedor form .titulo.titulo-registro{
+    padding-bottom: inherit;
+    padding-top: 1.5rem;
+}
+
+.contenedor form .logo {
+    width: 50%;
+
+}
+
+.contenedor form .botones .btn {
+    font-size: 1.7rem;
+    margin: .5rem;
+    display: inline-block;
+    background: var(--azul-claro);
+    border: var(--borde);
+    border-radius: .5rem;
+    padding: 1rem 3rem;
+    color: #333;
+}
+
+.contenedor form .botones .btn i { 
+    color: #333;
+    padding-right: .5rem;
+}
+
+.contenedor form .botones .btn:hover { 
+    color: #fff;
+    background: var(--azul);
+}
+
+.contenedor form .botones .btn:hover i { 
+    color: #fff;
+    background: var(--azul);
+}
+
+.contenedor form .input-caja {
+  padding: 3rem;
+  background: var(--azul-claro);  
+}
+
+/*PARA EL FORMULARIO DE REGISTRO*/
+.contenedor form .input-caja.input-caja-registro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.contenedor form .input-caja .input {
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    border-radius: .5rem;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    border: var(--borde);
+}
+
+.contenedor form .input-caja .input_paciente {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+
+/* ESTILOS SELECT FORMULARIO REGISTRO */
+
+.tipo_documento select option, .usuario select option {
+    font-size: 1.7rem;
+}
+
+
+.contenedor form .input-caja .input input {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #333;
+    text-transform: none;
+}
+
+.contenedor form .input-caja .input span {
+    color: #999;
+    padding-right: .5rem;
+    padding-left: 1.5rem;
+    font-size: 2rem;
+}
+.noTieneCuenta p {
+    color: #333;
+}
+.contenedor form .checkbox {
+    text-align: left;
+    padding: 1rem 0;
+}
+
+.contenedor form .checkbox label {
+    font-size: 1.7rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.contenedor form .ingresar-btn {
+    padding: 1rem 4rem;
+    margin-top: 1rem;
+    font-size: 1.7rem;
+    color: #fff;
+    border-radius: .5rem;
+    background: var(--azul);
+    cursor: pointer;
+    transition: .2s linear;
+}
+/* CSS PARA EL BTN DEL FORMULARIO DE REGISTRARSE */
+.contenedor form .ingresar-btn.registrarse-btn {
+    margin-top: inherit;
+    margin-bottom: 2rem;
+}
+.contenedor form .ingresar-btn:hover {
+    letter-spacing: .2rem;
+}
+
+/************ESTILOS CSS PARA EL DASHBOARD*********
+**************************************************/
+
+/* LAYOUT */
+
+.menu-dashboard {
+    max-width: 300px;
+    height: 100vh;
+    background: var(--bg-menu);
+    padding: 20px;
+    transition: max-width .3s ease;
+}
+
+.top-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-menu .logo {
+    display: flex;
+    align-items: center;
+    color: var(--blanco);
+}
+
+.top-menu .logo img {
+    width: 40px;
+    transition: width .3s ease;
+}
+
+.top-menu .logo span {
+    font-size: 20px;
+    margin-left: 20px;
+    /* display: none; */
+}
+
+.top-menu .toggle {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-menu .toggle i {
+    font-size: 35px;
+}
+
+/* BIENVENIDA */
+.saludo {
+    width: 100%;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    margin: 25px 0 20px 0;
+    font-size: 2rem;
+    color: var(--blanco);
+}
+
+.saludo i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+/* INPUT BOX */
+
+.input-search {
+    width: 100%;
+    margin: 50px 0;
+    background-color: var(--azul-opacidad);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.input-search i {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.input-search .input {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    height: 30px;
+    color: var(--blanco);
+    font-size: 1.4rem;
+    /* display: none; */
+}
+
+/* ENLACES MENU */
+
+.menu .enlace {
+    width: 100%;
+    padding: 20px 0 20px 17px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: 1.8rem;
+    transition: all .3s ease;
+}
+
+.menu .enlace:hover {
+    background: var(--azul-opacidad);
+    color: var(--blanco);
+    }
+
+.menu .enlace i {
+    margin-right: 20px;
+    font-size: 25px;
+}
+
+ .menu input {
+    color: var(--blanco);
+    background-color: var(--azul-opacidad);
+   }
+
+
+.menu-dashboard.open {
+    max-width: 300px;
+}
+
+.menu-dashboard.open .top-menu .logo span {
+    display: block;
+}
+
+.menu-dashboard.open .input-search
+.menu-dashboard.open .menu .enlace {
+    width: auto;
+}
+
+.menu-dashboard.open .input-search .input {
+    display: block;
+}
+
+.menu-dashboard.open .menu .enlace {
+    padding: 20px;
+}
+
+.menu-dashboard.open .menu .enlace span {
+    opacity: 1;
+}
+
+/*CONTENIDO PRINCIPAL - VISUALIZADOR PDF*/
+.contenido {
+  margin: 0 auto;
+}
+.visualizadorpdf {
+    justify-content: center;
+    align-items: center;
+    width: 85rem;
+    height: 100vh;
+}
+
+a .enlace.salir:hover {
+    color: #fff;
+}
+.tipo_documento::after, .usuario::after {
+    content: '\25BC';
+    position: absolute;
+    top: 1.6rem;
+    right: 0;
+    padding: 0 2rem;
+    background: rgba(255,255,255,1);
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+.tipo_documento:hover::after, .usuario:hover::after {
+    color: #601190;
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    outline: none;
+    box-shadow: none;
+    border: 0 !important;
+    background: #080708;
+    background-image: none;
+    flex: 1;
+    padding: 0 1.5rem;
+    color: #333;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.tipo_documento, .usuario {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 7rem;
+    line-height: 3;
+    background: #f0f3f5;
+    overflow: hidden;
+}
+
+/*BOTON BUSCAR*/
+
+.buscar {
+    margin-top: 3rem;
+    position: relative;
+    padding: 5px;
+  }
+  
+  .buscar input {
+    width: 0;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 18px;
+    color: #222;
+    outline: none;
+    border: 1px solid silver;
+    border-radius: 30px;
+    transition: all 0.6s ease;
+  }
+  
+  .btn {
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    background: var(--azul-opacidad);
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .buscar:hover input {
+    width: 240px;
+  }
+  
+  .buscar input:focus {
+    width: 240px;
+  }
+
+  /* TABLA DE BUSQUEDA */
+  .tabla {
+    margin: 3rem 0;
+    border-collapse: collapse;
+    min-width: 400px;
+    border-radius: .5rem .5rem 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.15);
+  }
+
+  .tabla thead tr th,
+  .tabla thead tr th input {
+    background-color: var(--azul-opacidad);
+    font-weight: bold;
+    color: var(--blanco);
+  }
+  .tabla tbody tr {
+    text-align: center;
+  }
+  .tabla thead tr th input::placeholder {
+    color: var(--blanco);
+    text-align: center;
+  }
+  
+  .tabla th,
+  .tabla td {
+    padding: 1.2rem 10rem;
+  }
+
+  .tabla tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .tabla tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  .tabla tbody tr:last-of-type {
+    border-bottom: 2px solid var(--azul-opacidad);
+  }
+  .tabla td, .formulario_busqueda {
+    font-size: 1.5rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .formulario_busqueda {
+    border: none;
+    outline: none;
+  }

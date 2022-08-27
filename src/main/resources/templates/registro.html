@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Registarse - Administramos Software</title>
+</head>
+<body>
+    <div class="contenedor">
+        <form th:action="@{/guardar}" method="post" th:object="${user}">
+            <div class="links">
+                <h3 class="titulo">Registro de usuario</h3>
+                <img src="img/logo.png" alt="Logo Laboratorio" class="logo">
+                <!--
+                <div class="botones">
+                    <a href="#" class="btn"><i class="fab fa-google"></i>Google</a>
+                    <a href="#" class="btn"><i class="fab fa-facebook-f"></i>Facebook</a>
+                </div>
+                -->
+            </div>
+
+            <h3 class="titulo titulo-registro">Ingrese sus datos</h3>
+            <div class="input-caja input-caja-registro">
+                <div class="input">
+                    <span class="fa-solid fa-user-pen"></span>
+                    <input type="text"  name="nombre1" th:field="*{nombre1}" placeholder="Primer nombre" required>
+                </div>
+                <div class="input">
+                    <span class="fa-solid fa-user-pen"></span>
+                    <input type="text" name="nombre2" th:field="*{nombre2}" placeholder="Segundo nombre" required>
+                </div>
+                <div class="input">
+                    <span class="fa-solid fa-user-pen"></span>
+                    <input type="text" name="apellido1" th:field="*{apellido1}" placeholder="Primer apellido" required>
+                </div>
+                <div class="input">
+                    <span class="fa-solid fa-user-pen"></span>
+                    <input type="text" name="apellido2" th:field="*{apellido2}" placeholder="Segundo apellido" required>
+                </div>
+                <div class="tipo_documento">
+                    <select name="tipoDocumento" id="tipoDocumento" th:field="*{tipoDocumento}" class="input" required>
+                        <option value="" selected disabled>Elija una opción</option>
+                        <option value="CC">Cédula Ciudadanía</option>
+                        <option value="TI">Tarjeta de identidad</option>
+                        <option value="RC">Registro civil</option>
+                        <option value="CE">Cédula extranjería</option>
+                        <option value="PAP">Pasaporte</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <span class="fa-solid fa-hashtag"></span>
+                    <input type="number" name="numeroDocumento" th:field="*{numeroDocumento}" placeholder="Número del documento" required>
+                </div>
+                <div class="input">
+                    <span class="fa-solid fa-at"></span>
+                    <input type="email" name="username" th:field="*{username}" placeholder="Correo electrónico" required>
+                </div>
+                <div class="usuario">
+                    <select name="tipoUsuario" th:field="*{tipoUsuario}" class="input" required>
+                        <option value="" selected disabled>Elija una opción</option>
+                        <option value="PAC">Paciente</option>
+                        <option value="MED">Médico</option>
+                        <option value="ADM">Administrativo</option>
+                    </select>
+                </div>
+                <div class="input">
+                    <span class="fa-solid fa-lock"></span>
+                    <input type="password" name="password" th:field="*{password}" placeholder="Contraseña" required>
+                </div>
+                <div class="input">
+                    <span class="fa-solid fa-lock"></span>
+                    <input type="password" name="" id="" placeholder="Confirmar contraseña" required>
+                </div>
+                <div class="noTieneCuenta">
+                    <p>¿Ya tiene cuenta?, <a href="login.html">ingrese aquí</a></p>
+                </div>
+            </div>
+            <input type="submit" value="Registrarse" class="ingresar-btn registrarse-btn">
+        </form>
+    </div>
+</body>
+</html>

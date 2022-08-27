@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Usuario</title>
+    <!-- BOX ICONS -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="static/css/estilos.css" th:href="@{/css/estilos.css}">
+    <!-- CUSTOM JS -->
+    <!-- <script src="./js/app.js" defer></script> -->
+    <script src="static/js/searchForm.js" th:src="@{/js/searchForm.js}"></script>
+</head>
+<body>
+<div class="contenedor-web">
+    <div class="menu-dashboard">
+        <!-- TOP MENU -->
+        <div class="top-menu">
+            <div class="logo">
+                <img src="static/img/logo.svg" th:src="@{img/logo.png}" alt="logo">
+                <span>Administramos Software</span>
+            </div>
+            <!-- <div class="toggle">
+                <i class='bx bx-menu'></i>
+            </div> -->
+        </div>
+
+        <div class="saludo">
+            <i class="bx bx-user"></i>
+            <span>Hola, <span th:text="${nombre}"></span></span>
+        </div>
+        <!-- INPUT SEARCH 
+        <div class="input-search">
+            <i class='bx bx-search'></i>
+            <input type="text" class="input" placeholder="Documento del paciente">
+        </div> -->
+        <!-- MENU -->
+        <div class="menu">
+            <div>
+                <a class="enlace" href="#">
+                    <i class='bx bxs-user-account'></i>
+                    <span>Registrar usuario</span>
+                </a>
+            </div>
+            <form th:action="@{/logout}" method="post">
+                
+                <input type="submit" value="Salir" class="enlace">
+                
+            </form>
+            
+        </div>
+    </div>
+    <!--SECCIÓN PRINCIPAL-->
+
+    <main class="contenido">   
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th>
+                        Documento
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                   
+                    <th>
+                        Resultado
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="document : ${documentoUser}">
+                    <td th:text="${document.numeroDocumento}"></td>
+                    <td th:text="${document.nombre}"></td>
+                    <td><a th:text="${document.Nexamen}" th:href="${document.examen}" target="_blank" rel="noopener noreferrer"></a></td>
+                </tr>
+                
+               
+            </tbody>
+        </table>
+
+    </main>
+</div>
+    
+</body>
+</html>
